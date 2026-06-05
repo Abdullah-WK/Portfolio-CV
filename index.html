@@ -4,6 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abdullah Khan — Digital Marketer & Web Developer</title>
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    })();
+  </script>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -28,6 +35,9 @@
       <li><a href="#beyond">Beyond Work</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true"></span>
+    </button>
     <div class="nav-status">
       <span class="status-dot"></span> Open to Work
     </div>
@@ -339,6 +349,26 @@
   </footer>
 
   <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+    function setTheme(theme) {
+      const isDark = theme === 'dark';
+      document.documentElement.dataset.theme = theme;
+      themeToggle.setAttribute('aria-pressed', isDark);
+      themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      localStorage.setItem('theme', theme);
+    }
+
+    setTheme(initialTheme);
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      setTheme(nextTheme);
+    });
+
     // Custom cursor
     const cursor = document.getElementById('cursor');
     const trail  = document.getElementById('cursorTrail');
