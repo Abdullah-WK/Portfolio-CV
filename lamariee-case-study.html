@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Mariee Boutique Case Study - Abdullah Khan</title>
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="case-page">
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+  <div class="noise"></div>
+
+  <nav class="nav">
+    <a class="nav-logo" href="index.html">
+      <span class="bracket">[</span>Abdullah. K<span class="bracket">]</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#client">Client</a></li>
+      <li><a href="#challenge">Challenge</a></li>
+      <li><a href="#performance">Results</a></li>
+      <li><a href="#insight">Insight</a></li>
+      <li><a href="#recommendations">Recommendations</a></li>
+      <li><a href="#contact" class="nav-cta">Discuss Your Brand</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true"></span>
+    </button>
+    <div class="nav-status">
+      <span class="status-dot"></span> Case Study
+    </div>
+  </nav>
+
+  <main>
+    <section class="case-hero" id="top">
+      <div class="hero-bg-grid"></div>
+      <div class="case-hero-content">
+        <div class="hero-tag">// Google Ads &amp; Market Intelligence Case Study</div>
+        <h1 class="hero-title">
+          <span class="line-reveal">Scaling Bridal Demand</span>
+          <span class="line-reveal delay-1"><span class="accent-text">With Search Data.</span></span>
+        </h1>
+        <p class="hero-sub">How I helped La Mariee Boutique generate <strong>2,324 clicks</strong>, <strong>198 conversions</strong>, and uncover which luxury bridal designers had stronger search demand in the United States and target locations.</p>
+        <div class="hero-cta-row">
+          <a href="#performance" class="btn-primary">View Results</a>
+          <a href="#contact" class="btn-ghost">Discuss Your Brand -></a>
+        </div>
+      </div>
+
+      <aside class="case-hero-card">
+        <div class="glass-shine"></div>
+        <div class="case-card-label">Results Snapshot</div>
+        <div class="case-metric">
+          <span>143,494</span>
+          <small>Impressions</small>
+        </div>
+        <div class="case-metric">
+          <span>2,324</span>
+          <small>Clicks</small>
+        </div>
+        <div class="case-metric">
+          <span>198</span>
+          <small>Conversions</small>
+        </div>
+        <div class="case-metric">
+          <span>$15.07</span>
+          <small>Cost Per Conversion</small>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section case-services">
+      <div class="section-label">01 / Services Delivered</div>
+      <div class="case-pill-grid">
+        <span>Google Ads Management</span>
+        <span>Conversion Optimization</span>
+        <span>Search Demand Research</span>
+        <span>Competitive Market Analysis</span>
+        <span>Monthly Performance Reporting</span>
+      </div>
+    </section>
+
+    <section class="about section case-split" id="client">
+      <div class="section-label">02 / The Client</div>
+      <div class="case-two-col">
+        <div>
+          <h2 class="section-title">About <span class="accent-text">La Mariee Boutique</span></h2>
+          <p>La Mariee Boutique is a luxury bridal boutique specializing in high-end designer wedding gowns. Their goal was to increase qualified bridal leads, drive appointment bookings, improve visibility in their regional market, and understand demand for emerging bridal designers.</p>
+          <p>The boutique was already running Google Ads campaigns, but needed clearer reporting, consistent optimization, and strategic insight beyond advertising metrics.</p>
+        </div>
+        <div class="case-mini-card">
+          <div class="profile-initials">LM</div>
+          <h3>Luxury Bridal Retail</h3>
+          <p>Performance marketing paired with market intelligence for designer inventory decisions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-evidence" id="challenge">
+      <div class="section-label">03 / The Challenge</div>
+      <div class="case-two-col case-two-col-reverse">
+        <figure class="case-image-card">
+          <img src="Case Study - LaMariee Boutique/Problem - Lamariee.png" alt="Client request asking for search demand research for bridal designers">
+          <figcaption>Client request to understand demand for new designer partners.</figcaption>
+        </figure>
+        <div>
+          <h2 class="section-title">The Problem</h2>
+          <p>While managing the Google Ads campaigns, the client raised a larger business question: were brides in Oklahoma, Arkansas, and Kansas actively searching for the designers they were evaluating?</p>
+          <div class="case-list-grid">
+            <div>
+              <h3>Designers Being Evaluated</h3>
+              <ul>
+                <li>Alexandra Grecco</li>
+                <li>Lihi Hod</li>
+                <li>Suzanne Neville</li>
+                <li>Leah da Gloria</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Existing Designers Compared</h3>
+              <ul>
+                <li>Galia Lahav</li>
+                <li>Floure Studios</li>
+                <li>Sareh Nouri</li>
+                <li>Lis Simon</li>
+                <li>Katherine Tash</li>
+                <li>Rebecca Schoneveld</li>
+              </ul>
+            </div>
+          </div>
+          <p>This moved the relationship beyond ad management. It became a strategic growth partnership.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="performance">
+      <div class="section-label">04 / Google Ads Performance</div>
+      <h2 class="section-title">Campaign Results <span class="accent-text">In 30 Days</span></h2>
+      <div class="case-results-grid">
+        <figure class="case-image-card case-dashboard">
+          <img src="Case Study - LaMariee Boutique/Case Study - LaMariee.png" alt="Google Ads performance summary shared with La Mariee Boutique">
+          <figcaption>Monthly Google Ads performance summary shared with the client.</figcaption>
+        </figure>
+        <div class="case-kpi-stack">
+          <div class="case-kpi"><span>143,494</span><small>Impressions</small></div>
+          <div class="case-kpi"><span>2,324</span><small>Clicks</small></div>
+          <div class="case-kpi"><span>1.62%</span><small>CTR</small></div>
+          <div class="case-kpi"><span>$2,990</span><small>Ad Spend</small></div>
+          <div class="case-kpi"><span>198</span><small>Conversions</small></div>
+          <div class="case-kpi"><span>$15.07</span><small>Cost Per Conversion</small></div>
+        </div>
+      </div>
+
+      <div class="case-callout">
+        <h3>Sample Sale Campaign Performance</h3>
+        <div class="case-inline-stats">
+          <span>134,134 impressions</span>
+          <span>1,312 clicks</span>
+          <span>$0.67 avg. CPC</span>
+          <span>$872.67 spend</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section" id="insight">
+      <div class="section-label">05 / Strategic Insight</div>
+      <div class="case-two-col">
+        <div>
+          <h2 class="section-title">Going Beyond <span class="accent-text">Ads Management</span></h2>
+          <p>Instead of simply providing ad reports, I helped La Mariee Boutique answer a larger business question: are brides in this market actually searching for these designers?</p>
+          <div class="about-chips">
+            <span class="chip">Google Search Volume</span>
+            <span class="chip">Search Trend Analysis</span>
+            <span class="chip">Comparative Keyword Research</span>
+            <span class="chip">Regional Demand Insights</span>
+          </div>
+        </div>
+        <figure class="case-image-card">
+          <img src="Case Study - LaMariee Boutique/Analysis.png" alt="Spreadsheet and Google Trends research comparing bridal designer search demand">
+          <figcaption>Designer search volume and trend comparison.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="demand">
+      <div class="section-label">06 / Designer Demand Analysis</div>
+      <h2 class="section-title">Search Demand <span class="accent-text">Findings</span></h2>
+      <div class="skills-grid case-findings-grid">
+        <div class="skill-card visible">
+          <h3>Alexandra Grecco</h3>
+          <p>Strongest overall branded demand with high bridal-specific query intent.</p>
+          <div class="case-demand-number">3,600</div>
+          <small>monthly searches</small>
+        </div>
+        <div class="skill-card visible">
+          <h3>Leah da Gloria</h3>
+          <p>Significant growth trend with strong sustained interest over time.</p>
+          <div class="case-demand-number">2,400</div>
+          <small>monthly searches</small>
+        </div>
+        <div class="skill-card visible">
+          <h3>Lihi Hod</h3>
+          <p>Moderate but consistent demand, with bridal-specific searches showing buyer intent.</p>
+          <div class="case-demand-number">1,300</div>
+          <small>monthly searches</small>
+        </div>
+        <div class="skill-card visible">
+          <h3>Suzanne Neville</h3>
+          <p>Lower U.S. awareness compared to others, but relevant for a niche luxury audience.</p>
+          <div class="case-demand-number">720</div>
+          <small>monthly searches</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section" id="recommendations">
+      <div class="section-label">07 / Strategic Recommendations</div>
+      <h2 class="section-title">Recommendations <span class="accent-text">Provided</span></h2>
+      <div class="case-recommend-grid">
+        <div class="case-mini-card">
+          <h3>Strong Potential Designers</h3>
+          <p>Alexandra Grecco and Leah da Gloria showed stronger search visibility, better brand awareness, and more consumer demand indicators.</p>
+        </div>
+        <div class="case-mini-card">
+          <h3>Niche Opportunity Designers</h3>
+          <p>Lihi Hod and Suzanne Neville could still perform with localized marketing, bridal content campaigns, and paid search amplification.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="impact">
+      <div class="section-label">08 / Client Relationship Impact</div>
+      <div class="case-two-col">
+        <div>
+          <h2 class="section-title">Outcome Beyond <span class="accent-text">Advertising</span></h2>
+          <p>This project strengthened the client relationship because it demonstrated strategic thinking, business understanding, market analysis capabilities, and proactive support beyond campaign management.</p>
+          <p>Instead of only sending reports, I became a growth partner helping guide business decisions.</p>
+        </div>
+        <figure class="case-image-card">
+          <img src="Case Study - LaMariee Boutique/after solution reply.png" alt="Client follow-up message asking for additional designer comparison research">
+          <figcaption>Client follow-up requesting deeper comparison against current designers.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="about section" id="communication">
+      <div class="section-label">09 / Client Communication</div>
+      <h2 class="section-title">Example <span class="accent-text">Workflow</span></h2>
+      <div class="case-recommend-grid">
+        <div class="case-mini-card">
+          <h3>Monthly Reporting</h3>
+          <ul>
+            <li>Google Ads summaries</li>
+            <li>KPI analysis</li>
+            <li>Conversion reporting</li>
+            <li>Campaign recommendations</li>
+          </ul>
+        </div>
+        <div class="case-mini-card">
+          <h3>Strategic Consulting</h3>
+          <ul>
+            <li>Market research requests</li>
+            <li>Consumer demand analysis</li>
+            <li>Competitive comparisons</li>
+            <li>Designer trend evaluations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="final-results">
+      <div class="section-label">10 / Final Results</div>
+      <h2 class="section-title">What This Case Study <span class="accent-text">Demonstrates</span></h2>
+      <div class="skills-grid case-final-grid">
+        <div class="skill-card visible">
+          <h3>Performance Marketing</h3>
+          <p>Successfully managed and optimized Google Ads campaigns producing measurable conversions.</p>
+        </div>
+        <div class="skill-card visible">
+          <h3>Strategic Consulting</h3>
+          <p>Provided actionable market intelligence to support inventory and partnership decisions.</p>
+        </div>
+        <div class="skill-card visible">
+          <h3>Client Retention</h3>
+          <p>Built trust by solving business problems beyond the original campaign-management scope.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section section" id="contact">
+      <div class="section-label">11 / CTA</div>
+      <div class="contact-inner visible">
+        <h2 class="section-title">Looking For More Than <span class="accent-text">Ads Management?</span></h2>
+        <p class="contact-sub">I help brands combine performance marketing, strategic research, consumer insights, and conversion-focused campaigns.</p>
+        <a href="mailto:abn.work12@gmail.com" class="btn-primary large">Discuss Your Brand -></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left"><span class="bracket">[</span>AK<span class="bracket">]</span> La Mariee Case Study</div>
+    <div class="footer-center"><a href="index.html">Back to Portfolio</a></div>
+    <div class="footer-right">2026</div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+
+    function setTheme(theme) {
+      const isDark = theme === 'dark';
+      document.documentElement.dataset.theme = theme;
+      themeToggle.setAttribute('aria-pressed', isDark);
+      themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      localStorage.setItem('theme', theme);
+    }
+
+    setTheme(document.documentElement.dataset.theme || 'light');
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      setTheme(nextTheme);
+    });
+
+    const cursor = document.getElementById('cursor');
+    const trail = document.getElementById('cursorTrail');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      setTimeout(() => {
+        trail.style.left = e.clientX + 'px';
+        trail.style.top = e.clientY + 'px';
+      }, 80);
+    });
+
+    document.querySelectorAll('a, button, .skill-card, .case-mini-card, .case-image-card').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+    });
+
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.case-image-card, .case-mini-card, .case-kpi, .case-callout, .skill-card').forEach(el => revealObs.observe(el));
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      document.querySelectorAll('section[id]').forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      document.querySelectorAll('.nav-links a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+    });
+  </script>
+</body>
+</html>
