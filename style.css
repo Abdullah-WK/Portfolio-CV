@@ -738,6 +738,11 @@ body {
 .t-out { color: var(--dark); font-weight: 700; }
 .t-cursor { color: var(--black); animation: blink 1s steps(2, start) infinite; }
 
+[data-theme="dark"] .t-prompt,
+[data-theme="dark"] .t-cmd {
+  color: #60a5fa;
+}
+
 @keyframes blink {
   50% { opacity: 0; }
 }
@@ -788,6 +793,10 @@ body {
 .open-tag {
   color: #1f8f45;
   font-weight: 800;
+}
+
+[data-theme="dark"] .open-tag {
+  color: #4ade80;
 }
 
 .skill-icon,
@@ -1269,6 +1278,7 @@ body {
 [data-theme="dark"] .case-inline-stats span {
   background: rgba(255,255,255,0.06);
   border-color: rgba(255,255,255,0.1);
+  color: var(--dark);
 }
 
 [data-theme="dark"] .case-image-card img {
