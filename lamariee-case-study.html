@@ -21,26 +21,51 @@
   <div class="cursor-trail" id="cursorTrail"></div>
   <div class="noise"></div>
 
-  <nav class="nav">
-    <a class="nav-logo" href="index.html">
-      <span class="bracket">[</span>Abdullah. K<span class="bracket">]</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#client">Client</a></li>
-      <li><a href="#challenge">Challenge</a></li>
-      <li><a href="#performance">Results</a></li>
-      <li><a href="#insight">Insight</a></li>
-      <li><a href="#recommendations">Recommendations</a></li>
-      <li><a href="#contact" class="nav-cta">Discuss Your Brand</a></li>
-    </ul>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
-      <span class="theme-toggle-icon" aria-hidden="true"></span>
-    </button>
-    <div class="nav-status">
-      <span class="status-dot"></span> Case Study
+  <!-- Mobile Top Bar -->
+  <div class="mobile-topbar">
+    <a class="nav-logo" href="index.html"><span class="bracket">[</span>Abdullah. K<span class="bracket">]</span></a>
+    <div class="mobile-topbar-right">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <a href="index.html" style="text-decoration:none;color:inherit;"><span class="bracket">[</span>Abdullah. K<span class="bracket">]</span></a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Case Study</div>
+      <ul class="sidebar-links">
+        <li><a href="#client"          class="sidebar-link"><span class="sl-icon">02</span><span class="sl-text">The Client</span></a></li>
+        <li><a href="#challenge"       class="sidebar-link"><span class="sl-icon">03</span><span class="sl-text">Challenge</span></a></li>
+        <li><a href="#performance"     class="sidebar-link"><span class="sl-icon">04</span><span class="sl-text">Results</span></a></li>
+        <li><a href="#insight"         class="sidebar-link"><span class="sl-icon">05</span><span class="sl-text">Insight</span></a></li>
+        <li><a href="#demand"          class="sidebar-link"><span class="sl-icon">06</span><span class="sl-text">Demand Data</span></a></li>
+        <li><a href="#recommendations" class="sidebar-link"><span class="sl-icon">07</span><span class="sl-text">Recommendations</span></a></li>
+        <li><a href="#contact"         class="sidebar-link"><span class="sl-icon">11</span><span class="sl-text">Contact</span></a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-bottom">
+      <a href="index.html" class="sidebar-cta">← Back to Portfolio</a>
+      <div class="sidebar-status">
+        <span class="status-dot"></span> Case Study
+      </div>
+      <div class="theme-row">
+        <button class="theme-label" id="themeLabelLight" aria-label="Switch to light mode">Light</button>
+        <button class="theme-label" id="themeLabelDark"  aria-label="Switch to dark mode">Dark</button>
+      </div>
     </div>
   </nav>
 
+  <div class="main-content">
   <main>
     <section class="case-hero" id="top">
       <div class="hero-bg-grid"></div>
@@ -108,59 +133,51 @@
 
     <section class="section case-evidence" id="challenge">
       <div class="section-label">03 / The Challenge</div>
-      <div class="case-two-col case-two-col-reverse">
-        <figure class="case-image-card">
-          <img src="Case Study - LaMariee Boutique/Problem - Lamariee.png" alt="Client request asking for search demand research for bridal designers">
-          <figcaption>Client request to understand demand for new designer partners.</figcaption>
-        </figure>
+      <h2 class="section-title">The <span class="accent-text">Problem</span></h2>
+      <p class="case-section-intro">While managing the Google Ads campaigns, the client raised a larger business question: were brides in Oklahoma, Arkansas, and Kansas actively searching for the designers they were evaluating? This moved the relationship beyond ad management — it became a strategic growth partnership.</p>
+      <div class="case-list-grid" style="margin-bottom:2.5rem;">
         <div>
-          <h2 class="section-title">The Problem</h2>
-          <p>While managing the Google Ads campaigns, the client raised a larger business question: were brides in Oklahoma, Arkansas, and Kansas actively searching for the designers they were evaluating?</p>
-          <div class="case-list-grid">
-            <div>
-              <h3>Designers Being Evaluated</h3>
-              <ul>
-                <li>Alexandra Grecco</li>
-                <li>Lihi Hod</li>
-                <li>Suzanne Neville</li>
-                <li>Leah da Gloria</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Existing Designers Compared</h3>
-              <ul>
-                <li>Galia Lahav</li>
-                <li>Floure Studios</li>
-                <li>Sareh Nouri</li>
-                <li>Lis Simon</li>
-                <li>Katherine Tash</li>
-                <li>Rebecca Schoneveld</li>
-              </ul>
-            </div>
-          </div>
-          <p>This moved the relationship beyond ad management. It became a strategic growth partnership.</p>
+          <h3>Designers Being Evaluated</h3>
+          <ul>
+            <li>Alexandra Grecco</li>
+            <li>Lihi Hod</li>
+            <li>Suzanne Neville</li>
+            <li>Leah da Gloria</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Existing Designers Compared</h3>
+          <ul>
+            <li>Galia Lahav</li>
+            <li>Floure Studios</li>
+            <li>Sareh Nouri</li>
+            <li>Lis Simon</li>
+            <li>Katherine Tash</li>
+            <li>Rebecca Schoneveld</li>
+          </ul>
         </div>
       </div>
+      <figure class="case-image-full">
+        <img src="Case Study - LaMariee Boutique/Problem - Lamariee.png" alt="Client request asking for search demand research for bridal designers">
+        <figcaption>Client request to understand demand for new designer partners.</figcaption>
+      </figure>
     </section>
 
     <section class="section" id="performance">
       <div class="section-label">04 / Google Ads Performance</div>
       <h2 class="section-title">Campaign Results <span class="accent-text">In 30 Days</span></h2>
-      <div class="case-results-grid">
-        <figure class="case-image-card case-dashboard">
-          <img src="Case Study - LaMariee Boutique/Case Study - LaMariee.png" alt="Google Ads performance summary shared with La Mariee Boutique">
-          <figcaption>Monthly Google Ads performance summary shared with the client.</figcaption>
-        </figure>
-        <div class="case-kpi-stack">
-          <div class="case-kpi"><span>143,494</span><small>Impressions</small></div>
-          <div class="case-kpi"><span>2,324</span><small>Clicks</small></div>
-          <div class="case-kpi"><span>1.62%</span><small>CTR</small></div>
-          <div class="case-kpi"><span>$2,990</span><small>Ad Spend</small></div>
-          <div class="case-kpi"><span>198</span><small>Conversions</small></div>
-          <div class="case-kpi"><span>$15.07</span><small>Cost Per Conversion</small></div>
-        </div>
+      <div class="case-kpi-row">
+        <div class="case-kpi"><span>143,494</span><small>Impressions</small></div>
+        <div class="case-kpi"><span>2,324</span><small>Clicks</small></div>
+        <div class="case-kpi"><span>1.62%</span><small>CTR</small></div>
+        <div class="case-kpi"><span>$2,990</span><small>Ad Spend</small></div>
+        <div class="case-kpi"><span>198</span><small>Conversions</small></div>
+        <div class="case-kpi"><span>$15.07</span><small>Cost Per Conv.</small></div>
       </div>
-
+      <figure class="case-image-full">
+        <img src="Case Study - LaMariee Boutique/Case Study - LaMariee.png" alt="Google Ads performance summary shared with La Mariee Boutique">
+        <figcaption>Monthly Google Ads performance summary shared with the client.</figcaption>
+      </figure>
       <div class="case-callout">
         <h3>Sample Sale Campaign Performance</h3>
         <div class="case-inline-stats">
@@ -174,22 +191,18 @@
 
     <section class="about section" id="insight">
       <div class="section-label">05 / Strategic Insight</div>
-      <div class="case-two-col">
-        <div>
-          <h2 class="section-title">Going Beyond <span class="accent-text">Ads Management</span></h2>
-          <p>Instead of simply providing ad reports, I helped La Mariee Boutique answer a larger business question: are brides in this market actually searching for these designers?</p>
-          <div class="about-chips">
-            <span class="chip">Google Search Volume</span>
-            <span class="chip">Search Trend Analysis</span>
-            <span class="chip">Comparative Keyword Research</span>
-            <span class="chip">Regional Demand Insights</span>
-          </div>
-        </div>
-        <figure class="case-image-card">
-          <img src="Case Study - LaMariee Boutique/Analysis.png" alt="Spreadsheet and Google Trends research comparing bridal designer search demand">
-          <figcaption>Designer search volume and trend comparison.</figcaption>
-        </figure>
+      <h2 class="section-title">Going Beyond <span class="accent-text">Ads Management</span></h2>
+      <p class="case-section-intro">Instead of simply providing ad reports, I helped La Mariee Boutique answer a larger business question: are brides in this market actually searching for these designers?</p>
+      <div class="about-chips" style="margin-bottom:2.5rem;">
+        <span class="chip">Google Search Volume</span>
+        <span class="chip">Search Trend Analysis</span>
+        <span class="chip">Comparative Keyword Research</span>
+        <span class="chip">Regional Demand Insights</span>
       </div>
+      <figure class="case-image-full">
+        <img src="Case Study - LaMariee Boutique/Analysis.png" alt="Spreadsheet and Google Trends research comparing bridal designer search demand">
+        <figcaption>Designer search volume and trend comparison.</figcaption>
+      </figure>
     </section>
 
     <section class="section" id="demand">
@@ -240,17 +253,12 @@
 
     <section class="section" id="impact">
       <div class="section-label">08 / Client Relationship Impact</div>
-      <div class="case-two-col">
-        <div>
-          <h2 class="section-title">Outcome Beyond <span class="accent-text">Advertising</span></h2>
-          <p>This project strengthened the client relationship because it demonstrated strategic thinking, business understanding, market analysis capabilities, and proactive support beyond campaign management.</p>
-          <p>Instead of only sending reports, I became a growth partner helping guide business decisions.</p>
-        </div>
-        <figure class="case-image-card">
-          <img src="Case Study - LaMariee Boutique/after solution reply.png" alt="Client follow-up message asking for additional designer comparison research">
-          <figcaption>Client follow-up requesting deeper comparison against current designers.</figcaption>
-        </figure>
-      </div>
+      <h2 class="section-title">Outcome Beyond <span class="accent-text">Advertising</span></h2>
+      <p class="case-section-intro">This project strengthened the client relationship because it demonstrated strategic thinking, business understanding, market analysis capabilities, and proactive support beyond campaign management. Instead of only sending reports, I became a growth partner helping guide business decisions.</p>
+      <figure class="case-image-full">
+        <img src="Case Study - LaMariee Boutique/after solution reply.png" alt="Client follow-up message asking for additional designer comparison research">
+        <figcaption>Client follow-up requesting deeper comparison against current designers.</figcaption>
+      </figure>
     </section>
 
     <section class="about section" id="communication">
@@ -306,6 +314,7 @@
       </div>
     </section>
   </main>
+  </div><!-- /.main-content -->
 
   <footer class="footer">
     <div class="footer-left"><span class="bracket">[</span>AK<span class="bracket">]</span> La Mariee Case Study</div>
@@ -314,22 +323,41 @@
   </footer>
 
   <script>
-    const themeToggle = document.getElementById('themeToggle');
-
+    // ── Theme toggle ──
     function setTheme(theme) {
-      const isDark = theme === 'dark';
       document.documentElement.dataset.theme = theme;
-      themeToggle.setAttribute('aria-pressed', isDark);
-      themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
       localStorage.setItem('theme', theme);
     }
-
     setTheme(document.documentElement.dataset.theme || 'light');
-    themeToggle.addEventListener('click', () => {
-      const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-      setTheme(nextTheme);
+    document.getElementById('themeLabelLight').addEventListener('click', () => setTheme('light'));
+    document.getElementById('themeLabelDark').addEventListener('click',  () => setTheme('dark'));
+
+    // ── Hamburger / Mobile Sidebar ──
+    const hamburger = document.getElementById('hamburger');
+    const sidebar   = document.getElementById('sidebar');
+    const overlay   = document.getElementById('mobileOverlay');
+
+    function openMenu() {
+      sidebar.classList.add('open');
+      overlay.classList.add('show');
+      hamburger.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('show');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    hamburger.addEventListener('click', () => sidebar.classList.contains('open') ? closeMenu() : openMenu());
+    overlay.addEventListener('click', closeMenu);
+    sidebar.querySelectorAll('.sidebar-link, .sidebar-cta').forEach(link => {
+      link.addEventListener('click', () => { if (window.innerWidth < 900) closeMenu(); });
     });
 
+    // ── Custom cursor ──
     const cursor = document.getElementById('cursor');
     const trail = document.getElementById('cursorTrail');
     document.addEventListener('mousemove', e => {
@@ -346,23 +374,23 @@
       el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
     });
 
+    // ── Scroll reveal ──
     const revealObs = new IntersectionObserver(entries => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          revealObs.unobserve(e.target);
-        }
+        if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
       });
     }, { threshold: 0.1 });
+    document.querySelectorAll('.case-image-card, .case-image-full, .case-mini-card, .case-kpi, .case-callout, .skill-card').forEach(el => revealObs.observe(el));
 
-    document.querySelectorAll('.case-image-card, .case-mini-card, .case-kpi, .case-callout, .skill-card').forEach(el => revealObs.observe(el));
-
+    // ── Active link on scroll ──
     window.addEventListener('scroll', () => {
       let current = '';
       document.querySelectorAll('section[id]').forEach(s => {
-        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+        if (window.scrollY >= s.offsetTop - 120) current = s.id;
       });
-      document.querySelectorAll('.nav-links a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+      document.querySelectorAll('.sidebar-link').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
     });
   </script>
 </body>
