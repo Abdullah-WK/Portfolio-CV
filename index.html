@@ -21,28 +21,52 @@
   <div class="cursor-trail" id="cursorTrail"></div>
   <div class="noise"></div>
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-logo">
+  <!-- Mobile Top Bar -->
+  <div class="mobile-topbar">
+    <div class="nav-logo"><span class="bracket">[</span>Abdullah. K<span class="bracket">]</span></div>
+    <div class="mobile-topbar-right">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
       <span class="bracket">[</span>Abdullah. K<span class="bracket">]</span>
     </div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#tools">Tools</a></li>
-      <li><a href="#beyond">Beyond Work</a></li>
-      <li><a href="lamariee-case-study.html">Case Study</a></li>
-      <li><a href="#contact" class="nav-cta">Contact</a></li>
-    </ul>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
-      <span class="theme-toggle-icon" aria-hidden="true"></span>
-    </button>
-    <div class="nav-status">
-      <span class="status-dot"></span> Open to Work
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Menu</div>
+      <ul class="sidebar-links">
+        <li><a href="#about" class="sidebar-link"><span class="sl-icon">01</span><span class="sl-text">About</span></a></li>
+        <li><a href="#skills" class="sidebar-link"><span class="sl-icon">02</span><span class="sl-text">Skills</span></a></li>
+        <li><a href="#experience" class="sidebar-link"><span class="sl-icon">03</span><span class="sl-text">Experience</span></a></li>
+        <li><a href="#education" class="sidebar-link"><span class="sl-icon">04</span><span class="sl-text">Education</span></a></li>
+        <li><a href="#tools" class="sidebar-link"><span class="sl-icon">05</span><span class="sl-text">Tools</span></a></li>
+        <li><a href="#beyond" class="sidebar-link"><span class="sl-icon">06</span><span class="sl-text">Beyond Work</span></a></li>
+        <li><a href="lamariee-case-study.html" class="sidebar-link"><span class="sl-icon">★</span><span class="sl-text">Case Study</span></a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-bottom">
+      <a href="#contact" class="sidebar-cta">Contact Me →</a>
+      <div class="sidebar-status">
+        <span class="status-dot"></span> Open to Work
+      </div>
+      <div class="theme-row">
+        <button class="theme-label" id="themeLabelLight" aria-label="Switch to light mode">Light</button>
+        <button class="theme-label" id="themeLabelDark"  aria-label="Switch to dark mode">Dark</button>
+      </div>
     </div>
   </nav>
+
+  <!-- Main Content Wrapper -->
+  <div class="main-content">
 
   <!-- Hero -->
   <section class="hero" id="home">
@@ -342,6 +366,8 @@
     </div>
   </section>
 
+  </div><!-- /.main-content -->
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-left"><span class="bracket">[</span>AK<span class="bracket">]</span> Abdullah Khan</div>
@@ -350,27 +376,53 @@
   </footer>
 
   <script>
-    // Theme toggle
-    const themeToggle = document.getElementById('themeToggle');
+    // ── Theme toggle (handles both sidebar + mobile toggles) ──
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
 
     function setTheme(theme) {
-      const isDark = theme === 'dark';
       document.documentElement.dataset.theme = theme;
-      themeToggle.setAttribute('aria-pressed', isDark);
-      themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
       localStorage.setItem('theme', theme);
     }
 
     setTheme(initialTheme);
-    themeToggle.addEventListener('click', () => {
-      const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-      setTheme(nextTheme);
+    document.getElementById('themeLabelLight').addEventListener('click', () => setTheme('light'));
+    document.getElementById('themeLabelDark').addEventListener('click',  () => setTheme('dark'));
+
+    // ── Hamburger / Mobile Sidebar ──
+    const hamburger = document.getElementById('hamburger');
+    const sidebar   = document.getElementById('sidebar');
+    const overlay   = document.getElementById('mobileOverlay');
+
+    function openMenu() {
+      sidebar.classList.add('open');
+      overlay.classList.add('show');
+      hamburger.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('show');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+      sidebar.classList.contains('open') ? closeMenu() : openMenu();
+    });
+    overlay.addEventListener('click', closeMenu);
+
+    // Close menu when a sidebar link is tapped on mobile
+    sidebar.querySelectorAll('.sidebar-link, .sidebar-cta').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 900) closeMenu();
+      });
     });
 
-    // Custom cursor
+    // ── Custom cursor ──
     const cursor = document.getElementById('cursor');
     const trail  = document.getElementById('cursorTrail');
     document.addEventListener('mousemove', e => {
@@ -386,7 +438,7 @@
       el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
     });
 
-    // Terminal typer (extra lines after static ones)
+    // ── Terminal typer ──
     const lines = [
       'skills --top',
       '> SEO, Google Ads, PPC, HTML, CSS',
@@ -418,7 +470,7 @@
     }
     typeLoop();
 
-    // Counter animation
+    // ── Counter animation ──
     document.querySelectorAll('.stat-num').forEach(el => {
       new IntersectionObserver(entries => {
         if (!entries[0].isIntersecting) return;
@@ -429,23 +481,25 @@
       }, { threshold: 0.5 }).observe(el);
     });
 
-    // Scroll reveal
+    // ── Scroll reveal ──
     const revealObs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
     }, { threshold: 0.1 });
     document.querySelectorAll('.skill-card, .tool-item, .timeline-item, .about-grid, .contact-inner, .edu-card, .beyond-card').forEach(el => revealObs.observe(el));
 
-    // Skill bars
+    // ── Skill bars ──
     const barObs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animate'); barObs.unobserve(e.target); } });
     }, { threshold: 0.3 });
     document.querySelectorAll('.skill-bar').forEach(b => barObs.observe(b));
 
-    // Nav active
+    // ── Sidebar active link on scroll ──
     window.addEventListener('scroll', () => {
       let current = '';
-      document.querySelectorAll('section[id]').forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
-      document.querySelectorAll('.nav-links a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+      document.querySelectorAll('section[id]').forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+      document.querySelectorAll('.sidebar-link').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
     });
   </script>
 </body>
