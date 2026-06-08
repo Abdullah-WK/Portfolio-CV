@@ -770,26 +770,64 @@ body {
 .edu-detail { font-size: 0.78rem; color: var(--mid); font-weight: 400; }
 
 /* ── Tools ── */
-.tools-grid { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+.tools-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 24px;
+
+  margin-top: 50px;
+}
 .tool-item {
-  display: flex; align-items: center; gap: 0.6rem;
-  padding: 0.7rem 1.2rem; border-radius: var(--radius-sm);
-  background: var(--off-white); border: 1px solid var(--smoke);
-  cursor: default;
-  transition: all var(--t);
-  opacity: 0; transform: scale(0.95);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 18px 22px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 16px;
+
+  backdrop-filter: blur(10px);
+
+  transition: all 0.3s ease;
+
+  min-height: 78px;
 }
 .tool-item.visible {
   opacity: 1; transform: scale(1);
   transition: opacity 0.4s, transform 0.4s, background var(--t), box-shadow var(--t);
 }
 .tool-item:hover {
-  background: var(--white); border-color: transparent;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-  transform: translateY(-2px);
+  transform: translateY(-5px);
+
+  border-color: #00d2ff;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  box-shadow:
+    0 0 0 1px rgba(0, 210, 255, 0.15),
+    0 10px 30px rgba(0, 210, 255, 0.12);
 }
 .tool-icon { font-size: 1.1rem; }
 .tool-item span:last-child { font-size: 0.78rem; color: var(--dark); font-weight: 700; }
+.tool-icon-img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.tool-item span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.4;
+}
 
 /* ── Beyond Work ── */
 .beyond-section { background: var(--off-white); }
