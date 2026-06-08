@@ -54,12 +54,16 @@ body {
 
 /* ── Custom Cursor ── */
 .cursor {
-  position: fixed; z-index: 9999; pointer-events: none;
-  width: 10px; height: 10px; border-radius: 50%;
-  background: var(--black);
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffffff;
   transform: translate(-50%, -50%);
   transition: width 0.2s, height 0.2s, background 0.2s, opacity 0.2s;
-  mix-blend-mode: multiply;
+  mix-blend-mode: difference;
 }
 .cursor-trail {
   position: fixed; z-index: 9998; pointer-events: none;
@@ -1179,8 +1183,7 @@ body {
 }
 
 [data-theme="dark"] .cursor {
-  background: var(--black);
-  mix-blend-mode: difference;
+  background: #ffffff;
 }
 
 [data-theme="dark"] .cursor-trail {
