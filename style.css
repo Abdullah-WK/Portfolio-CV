@@ -1372,6 +1372,26 @@ body {
   text-decoration: none;
 }
 
+.client-logo {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 35px;
+}
+
+.client-logo img {
+  width: 240px;
+  max-width: 100%;
+
+  height: auto;
+
+  object-fit: contain;
+
+  display: block;
+}
 .case-hero {
   min-height: 100vh;
   max-width: 100%; /* Updated */
